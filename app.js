@@ -1,12 +1,14 @@
-const h1 = document.querySelector("#title");
+const loginForm = document.querySelector("#login-form");
+const loginInput = loginForm.querySelector("input");
+const loginButton = loginForm.querySelector("button");
 
-function handleTitleClick(){
-    const clickedClass = "clicked";
-    if(h1.classList.contains(clickedClass)){
-        h1.classList.remove(clickedClass);
-    }else{
-        h1.classList.add(clickedClass);
+function onLoginBtnClick(){
+    const userName = loginInput.value;
+    if(userName === ""){
+        alert("Please write your name");
+    }else if(userName.length > 15){
+        alert("Your name is too long.")
     }
 }
 
-h1.addEventListener("click", handleTitleClick);
+loginButton.addEventListener("click", onLoginBtnClick);
